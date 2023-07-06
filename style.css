@@ -1,0 +1,572 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,600;1,200;1,300;1,400;1,600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', Verdana, sans-serif;
+}
+
+:root {
+    --clr: #f8eee5;
+    --smaller: .75;
+}
+
+main {
+    overflow: auto;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--clr);
+    color: #9d583e
+}
+
+.bg-header {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: url("./assets/bedua.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+
+.bg-header::before {
+    content: " ";
+    position: absolute;
+    width: 100%;
+    height: 60vh;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, rgb(248, 238, 229), rgba(0, 0, 0, 0));
+}
+
+.navigation {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 5px;
+    width: 400px;
+    height: 70px;
+    background: #9d583e;
+    border-radius: 15px;
+    z-index: 2;
+}
+
+.navigation ul {
+    display: flex;
+    width: 500px;
+    justify-content: center;
+}
+
+.navigation ul li {
+    position: relative;
+    display: flex;
+    width: 90px;
+    height: 90px;
+    z-index: 1;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+}
+
+.navigation ul li img {
+    color: var(--clr);
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 2em;
+    text-align: center;
+    transition: 0.5s;
+    color: var(--clr);
+
+}
+
+/*Animasi icon*/
+.navigation ul li.active a .icon {
+    transform: translateY(-40px);
+}
+
+.navigation ul li a .text {
+    position: absolute;
+    color: var(--clr);
+    font-weight: 400px;
+    font-size: 1em;
+    line-height: .8em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(15px);
+
+}
+
+.navigation ul li.active a .text {
+    opacity: 1;
+    transform: translateY(8px);
+}
+
+/*animasi lingkaran*/
+.indicator {
+    position: absolute;
+    left: 30;
+    top: -40px;
+    width: 70px;
+    height: 70px;
+    background: #9d583d;
+    border-radius: 50%;
+    border: 5px solid var(--clr);
+}
+
+.navigation ul li:nth-child(1).active~.indicator {
+    transform: translateX(calc(90px * 0));
+}
+
+.navigation ul li:nth-child(2).active~.indicator {
+    transform: translateX(calc(90px * 1));
+}
+
+.navigation ul li:nth-child(3).active~.indicator {
+    transform: translateX(calc(90px * 2));
+}
+
+.navigation ul li:nth-child(4).active~.indicator {
+    transform: translateX(calc(90px * 3));
+}
+
+
+/*
+AUDIO
+*/
+.icon-audio {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+#iconsvg {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 4em;
+    padding-top: 25%;
+    z-index: 3;
+}
+
+/*FIRST CONTENT*/
+.first-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: black;
+}
+
+.first-content h2 {
+    font-family: 'Dancing Script';
+    font-weight: 600;
+    font-size: 3em;
+}
+
+.std-button {
+    font-size: 0.8em;
+    background: #9d583d;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    color: var(--clr);
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+
+.std-button a {
+    z-index: 1;
+    color: var(--clr);
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+/*SECOND CONTENT*/
+.second-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px 0 50px;
+}
+
+.border-mempelai img {
+    border-radius: 30px;
+    background: var(--clr);
+    box-shadow: 20px 20px 60px #d3cac3,
+        -20px -20px 60px #ffffff;
+}
+
+.second-content .sub-content h2 {
+    justify-content: center;
+    text-align: center;
+    margin-top: .5em;
+    margin-bottom: 1em;
+    font-family: "Dancing Script";
+    font-size: 3em;
+    font-weight: 800;
+}
+
+.second-content .sub-content P {
+    justify-content: center;
+    text-align: center;
+}
+
+.sub-content-mempelai {
+    justify-content: center;
+    text-align: center;
+}
+
+.cont-photo span {
+    font-size: 1.3em;
+    font-weight: 800;
+}
+
+.sub-content-mempelai img {
+    margin-top: 2em;
+}
+
+.sub-content-mempelai .icon1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+
+}
+
+/*KONTEN KETIGA MENGHITUNG HARI*/
+.container {
+    color: #9d583e;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container h2 {
+    font-family: 'Dancing Script';
+    letter-spacing: .100rem;
+    font-size: 2em;
+}
+
+#countdown li {
+    display: inline-block;
+    font-size: 1em;
+    list-style-type: none;
+    padding: 1em;
+}
+
+#countdown li span {
+    display: block;
+    font-size: 4rem;
+}
+
+.emoji {
+    display: none;
+    padding: 1rem;
+}
+
+.emoji span {
+    font-size: 4rem;
+    padding: 0 .5rem;
+}
+
+/*
+LOKASI PEMBERKATAN DAN ACARA ADAT
+*/
+.sub-third-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px 0 50px;
+    text-align: center;
+}
+
+.sub-third-content h4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-third-acara {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+    grid-gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.sub-third-lok {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    box-shadow: 18px 0 px 87px 0px rgb(10, 15, 70, 7);
+    border: .1rem solid rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    width: 380px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.sub-third-lok h2 {
+    font-family: 'Dancing Script';
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.std-button1 {
+    font-size: 0.6em;
+    background: #9d583d;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 10px;
+    color: var(--clr);
+}
+
+.std-button1 a {
+    z-index: 1;
+    color: var(--clr);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+/*
+WAVE
+di versi mobile harus diubah lagi
+*/
+.sub-four-content .wave {
+    position: absolute;
+    bottom: -75rem;
+    left: 0;
+    height: 11rem;
+    width: 100%;
+    background: url(./assets/wave.png);
+    background-size: 100rem 8rem;
+    background-repeat: repeat-x;
+    animation: waves 10s linear infinite;
+    z-index: -1;
+}
+
+.sub-four-content .wave2 {
+    animation-direction: reverse;
+    opacity: .2;
+}
+
+.sub-four-content .wave3 {
+    animation-duration: 4s;
+    opacity: .5;
+}
+
+@keyframes waves {
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: 100rem;
+    }
+}
+
+/*AMPLOP DIGITAL*/
+.amplop-digital {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 50px 0 50px;
+}
+
+.amplop-digital h2 {
+    font-family: 'Dancing Script';
+    margin-top: 1em;
+    font-size: 3em;
+}
+
+/*BTN*/
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: .5rem 2rem;
+    border-radius: 5rem;
+    background: #9d583d;
+    font-size: .8rem;
+    color: var(--clr);
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    transition: all .3s linear;
+    cursor: pointer;
+}
+
+/*
+PADDING Di MOBILE HARUS DI UBAH
+*/
+.container-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 10rem;
+}
+
+.container-box .box1 {
+    flex: 1 1 15rem;
+    background: #fff;
+    border-radius: .5rem;
+    border: .1rem solid rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    margin: 1rem;
+    padding: 3rem 2rem;
+    border-radius: .5rem;
+    text-align: center;
+    transition: .2s linear;
+}
+
+.himbauan h2 {
+    font-family: 'Dancing Script';
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.himbauan p {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.container-box1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container-box1 .box2 {
+    flex: 1 1 10rem;
+    background: #fff;
+    border-radius: .5rem;
+    border: .1rem solid rgba(0, 0, 0, .2);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    margin: 1rem .5rem;
+    padding: 10px 5px;
+    border-radius: .5rem;
+    text-align: center;
+    transition: .2s linear;
+}
+
+.container-box1 .box2 img {
+    width: 50px;
+}
+
+.box1 h4 {
+    font-size: 1.1em;
+}
+
+.box1 h5 {
+    font-size: 1em;
+}
+
+.box1 img {
+    width: 15vh;
+}
+
+/*ALKITAB*/
+.content-alkitab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #fff;
+    margin: 6em 2em 1em 2em;
+
+}
+
+.content-alkitab p {
+    text-align: center;
+    padding: 10px;
+}
+
+footer {
+    background-color: #9d583e;
+    color: var(--clr);
+    font-size: 10px;
+    text-align: center;
+    margin-bottom: 10em;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    #iconsvg {
+        padding-top: 80%;
+    }
+
+    .second-content .sub-content h2 {
+        font-size: 2.4em;
+    }
+
+    .container-box {
+        padding: 1rem;
+    }
+
+    .sub-four-content .wave {
+        bottom: -83rem;
+    }
+
+    .content-alkitab {
+        width: 450px;
+        padding: 28px;
+    }
+}
+
+/*
+@media all and (max-width: 768px) {
+    h1 {
+        font-size: calc(1.5rem * var(--smaller));
+    }
+
+    li {
+        font-size: calc(1.125rem * var(--smaller));
+    }
+
+    li span {
+        font-size: calc(3.375rem * var(--smaller));
+    }
+}
+*/
